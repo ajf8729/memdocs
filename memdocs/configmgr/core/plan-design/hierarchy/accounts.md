@@ -369,7 +369,11 @@ The management point uses the **Management point connection account** to connect
   > [!NOTE]
   > For enhanced security posture it is recommended to leverage alternate account rather than Computer account for ‘Management point connection account’.
 
-Create the account as a low-right local account on the computer that runs Microsoft SQL Server.
+Create the account as a low-right local account on the computer that runs Microsoft SQL Server. Then create a SQL login for this account and grant it the following database roles:
+
+- [smsdbrole_MP](#smsdbrole_mp)
+- [smsdbrole_MPMBAM](#smsdbrole_mpmbam) (if utilizing BitLocket management)
+- [smsdbrole_MPUserSvc](#smsdbrole_mpusersvc)
 
 > [!IMPORTANT]
 > - Don't grant interactive sign-in rights to this account.
